@@ -27,6 +27,5 @@ cmd = 'bun run start'
 CI = 'true'
 NIXPACKS_METADATA = 'node'
 NODE_ENV = 'production'
-NPM_CONFIG_PRODUCTION = 'true'
 
 providers = ["node"]
