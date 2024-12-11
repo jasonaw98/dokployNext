@@ -23,9 +23,4 @@ cmds = [
 [start]
 cmd = 'bun run start'
 
-[variables]
-CI = 'true'
-NIXPACKS_METADATA = 'node'
-NODE_ENV = 'production'
-
 providers = ["node"]
