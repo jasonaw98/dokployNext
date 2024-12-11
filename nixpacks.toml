@@ -1,21 +1,21 @@
-# Nixpacks.toml
-[phases]
-# Specify the installation steps
-install = """
-    # Install Bun using Nix
-    nix-env -iA nixpkgs.bun
-"""
+[phases.setup]
+aptPkgs = ['unzip', 'curl']
+nixPkgs = ['nodejs_22', 'bun']
 
-# Define the commands for starting the application
-[commands]
-# This assumes you have an entry point script, e.g., `index.js`
-start = "bun install"
+[phases.install]
+cmds = [
+  'nix-env -iA nixpkgs.bun',
+  'bun --version',
+  'bun install'
+]
 
-# Optionally, define the build command if there is a build step
-# [build]
-# command = "bun build"
+[phases.build]
+cmds = [
+  'export BUN_INSTALL="$HOME/.bun"',
+  'export PATH="$BUN_INSTALL/bin:$PATH"',
+  'bun install',
+  'bun run build'
+]
 
-[variables]
-# Specify any environment variables needed by Bun
-NODE_ENV = "production"
-PORT = "3000"
+[start]
+cmd = 'bun run start'
