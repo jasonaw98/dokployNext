@@ -24,3 +24,8 @@ cmds = [
 cmd = 'bun run start'
 
 providers = ["node"]
+
+[environment]
+# Explicitly set any necessary environment variables
+PATH = "/nix/var/nix/profiles/per-user/root/profile/bin:$PATH"
+HOME = "/root"
