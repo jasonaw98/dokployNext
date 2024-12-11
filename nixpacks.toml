@@ -10,8 +10,6 @@ cmds = [
   'echo "export PATH=\"$BUN_INSTALL/bin:$PATH\"" >> $HOME/.bashrc',
   'source $HOME/.bashrc',
   'ln -s $HOME/.bun/bin/bun /usr/local/bin/bun'
-   'ls -l $HOME/.bun/bin/bun',
-  'chmod +x $HOME/.bun/bin/bun'
 ]
 
 [phases.build]
