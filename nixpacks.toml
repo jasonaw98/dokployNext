@@ -2,11 +2,13 @@
 aptPkgs = ['unzip', 'curl']
 nixpkgs = ['nodejs_22', 'bun']
 
-[phases]
+[phases.build]
 # Use Bun to install dependencies
-build = "bun install"
+cmds = ["bun install"]
+
+[phases.start]
 # Use Bun to start the application
-start = "bun start"
+cmds = ["bun start"]
 
 [start]
-cmd = 'bun run start'
+cmd = "bun run start"
